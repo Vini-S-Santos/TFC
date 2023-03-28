@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import createToken from '../utils/jwtToken';
+import createToken from '../utils.ts/jwtToken';
 import { UserService } from '../services';
 
 const errorMessage = 'Invalid email or password';
