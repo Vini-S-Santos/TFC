@@ -1,21 +1,28 @@
-import { Model, INTEGER, STRING } from 'sequelize';
+import { Model, STRING, INTEGER } from 'sequelize';
 import db from '.';
 
 class Team extends Model {
-  declare id: number;
+  declare readonly id: number;
   declare teamName: string;
 }
 
 Team.init({
   id: {
     type: INTEGER,
+    allowNull: false,
     primaryKey: true,
     autoIncrement: true,
   },
-  teamName: STRING,
+  teamName: {
+    type: STRING,
+    allowNull: false,
+    field: 'team_name',
+  },
 }, {
   underscored: true,
   sequelize: db,
+  modelName: 'Team',
+  tableName: 'teams',
   timestamps: false,
 });
 
