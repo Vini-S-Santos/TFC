@@ -1,18 +1,21 @@
 module.exports = {
-    up: async (queryInterface, Sequelize) => {
-      await queryInterface.createTable('teams', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('teams',
+      {
         id: {
           type: Sequelize.INTEGER,
-          allowNull: false,
           autoIncrement: true,
+          allowNull: false,
           primaryKey: true,
-        }, team_name: {
-          type: Sequelize.STRING
-        }
+        },
+        team_name: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
       });
-    },
-  
-    down: async (queryInterface) => {
-      await queryInterface.dropTable('teams');
-    },
-  };
+  },
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('teams');
+  }
+};
