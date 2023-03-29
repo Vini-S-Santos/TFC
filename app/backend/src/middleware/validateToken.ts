@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { decodeToken } from '../utils.ts/jwtToken';
+import { decodeToken } from '../utils/jwtToken';
 
 const validateToken = (req: Request, res: Response, next: NextFunction) => {
   const { authorization } = req.headers;
