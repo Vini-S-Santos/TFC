@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { LeaderBoardService } from '../services';
 
 export default class LeaderBoardController {
-  constructor(private leaderBoardService = new LeaderBoardService()) {}
+  constructor(private leaderBoardService = new LeaderBoardService()) { }
 
   public async GetResultsHome(_req: Request, res: Response): Promise<Response | void> {
     const result = await this.leaderBoardService.GetResults('home');
